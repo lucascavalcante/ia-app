@@ -1,0 +1,9 @@
+instituto_atlantico:
+    resource: "@InstitutoAtlanticoBundle/Resources/config/routing.yml"
+    prefix:   /api
+    defaults:
+        _format: json
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

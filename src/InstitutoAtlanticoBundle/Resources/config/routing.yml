@@ -1,0 +1,57 @@
+# Home
+api_home:
+    path: /
+    defaults: { _controller: InstitutoAtlanticoBundle:Default:index }
+    methods: GET
+
+# Users
+users_list:
+    path: /users
+    defaults: { _controller: InstitutoAtlanticoBundle:User:list }
+    methods: GET
+
+users_show:
+    path: /users/{id}
+    defaults: { _controller: InstitutoAtlanticoBundle:User:show }
+    methods: GET
+
+users_save:
+    path: /users
+    defaults: { _controller: InstitutoAtlanticoBundle:User:save }
+    methods: POST
+
+users_update:
+    path: /users/{id}
+    defaults: { _controller: InstitutoAtlanticoBundle:User:update }
+    methods: PUT
+
+users_delete:
+    path: /users/{id}
+    defaults: { _controller: InstitutoAtlanticoBundle:User:delete }
+    methods: DELETE
+
+# Movies
+movies_list:
+    path:     /movies
+    defaults: { _controller: InstitutoAtlanticoBundle:Movie:list }
+    methods: GET
+
+movies_show:
+    path:     /movies/{id}
+    defaults: { _controller: InstitutoAtlanticoBundle:Movie:show }
+    methods: GET
+
+movies_save:
+    path:     /movies
+    defaults: { _controller: InstitutoAtlanticoBundle:Movie:save }
+    methods: POST
+
+movies_update:
+    path:     /movies/{id}
+    defaults: { _controller: InstitutoAtlanticoBundle:Movie:update }
+    methods: PUT
+
+movies_delete:
+    path:     /movies/{id}
+    defaults: { _controller: InstitutoAtlanticoBundle:Movie:delete }
+    methods: DELETE
