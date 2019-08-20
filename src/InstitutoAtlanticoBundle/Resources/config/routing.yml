@@ -55,3 +55,14 @@ movies_delete:
     path:     /movies/{id}
     defaults: { _controller: InstitutoAtlanticoBundle:Movie:delete }
     methods: DELETE
+
+# Ratings
+ratings_by_user:
+    path:     /ratings/user/{idUser}
+    defaults: { _controller: InstitutoAtlanticoBundle:Rating:listByUser }
+    methods: GET
+
+ratings_by_movie:
+    path:     /ratings/movie/{idMovie}
+    defaults: { _controller: InstitutoAtlanticoBundle:Rating:listByMovie }
+    methods: GET
