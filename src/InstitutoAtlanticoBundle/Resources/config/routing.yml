@@ -58,11 +58,27 @@ movies_delete:
 
 # Ratings
 ratings_by_user:
-    path:     /ratings/user/{idUser}
+    path:     /ratings/user/{userId}
     defaults: { _controller: InstitutoAtlanticoBundle:Rating:listByUser }
     methods: GET
 
+ratings_all_users:
+    path:     /ratings/user
+    defaults: { _controller: InstitutoAtlanticoBundle:Rating:listAllUsers }
+    methods: GET
+
 ratings_by_movie:
-    path:     /ratings/movie/{idMovie}
+    path:     /ratings/movie/{movieId}
     defaults: { _controller: InstitutoAtlanticoBundle:Rating:listByMovie }
+    methods: GET
+
+ratings_all_movies:
+    path:     /ratings/movie
+    defaults: { _controller: InstitutoAtlanticoBundle:Rating:listAllMovies }
+    methods: GET
+
+# Recommendation
+recommendation_by_user:
+    path:     /recommendation/user/{userId}
+    defaults: { _controller: InstitutoAtlanticoBundle:Recommendation:listRecommendationByUser }
     methods: GET

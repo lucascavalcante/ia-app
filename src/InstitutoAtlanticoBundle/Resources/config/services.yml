@@ -10,3 +10,7 @@ services:
   rating_service:
     class: InstitutoAtlanticoBundle\Service\RatingService
     arguments: ["@doctrine.orm.entity_manager"]
+
+  recommendation_service:
+    class: InstitutoAtlanticoBundle\Service\RecommendationService
+    arguments: ["@rating_service"]
