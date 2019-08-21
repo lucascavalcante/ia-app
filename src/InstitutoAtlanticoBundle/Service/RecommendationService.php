@@ -34,7 +34,7 @@ class RecommendationService
             
             if($sim > 0) {
                 foreach($ratings[$anotherUser['id']]['ratings'] as $key=>$value) {
-                    if(array_key_exists($key, $ratings[$user]['ratings'])) {
+                    if(!array_key_exists($key, $ratings[$user]['ratings'])) {
                         if(!array_key_exists($key, $total)) {
                             $total[$key] = 0;
                         }
