@@ -52,7 +52,7 @@ class Rating
 
     public function __construct()
     {
-        $this->setCreatedAt(new \DateTime('now', \DateTimeZone('America/Sao_Paulo')));
+        $this->setCreatedAt(new \DateTime('now', new \DateTimeZone('America/Sao_Paulo')));
     }
 
     /**
