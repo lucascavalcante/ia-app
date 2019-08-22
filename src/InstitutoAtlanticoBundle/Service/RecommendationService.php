@@ -2,20 +2,30 @@
 
 namespace InstitutoAtlanticoBundle\Service;
 
+use Doctrine\ORM\EntityManager;
+
 class RecommendationService
 {
+    private $em;
     private $ratingService;
+    private $repository;
 
-    public function __construct(RatingService $ratingService)
+    public function __construct(EntityManager $em, RatingService $ratingService)
     {
+        $this->em = $em;
         $this->ratingService = $ratingService;
+        $this->repository = $this->em->getRepository('InstitutoAtlanticoBundle:Recommendation');
     }
 
     public function getRecommendationsByUser($userId)
     {
+        return $recommendation = $this->repository->findBy(['user' => $userId]);
+    }
+
+    public function generateRecommendationsByUser($userId)
+    {
         $allRatings = $this->ratingService->getRatingsAllUsers();
         return array_slice($this->getRecommendations($allRatings, $userId), 0, 5);
-
     }
 
     private function getRecommendations($ratings, $user)

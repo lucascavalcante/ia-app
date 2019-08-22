@@ -2,6 +2,8 @@
 
 namespace InstitutoAtlanticoBundle\Repository;
 
+use InstitutoAtlanticoBundle\Entity\Rating;
+
 /**
  * RatingRepository
  *
@@ -10,6 +12,13 @@ namespace InstitutoAtlanticoBundle\Repository;
  */
 class RatingRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function persist(Rating $rating)
+    {
+        $this->getEntityManager()->persist($rating);
+        $this->getEntityManager()->flush();
+        return $rating;
+    }
+
     public function ratingsGroupedByUser()
     {
         $query = $this->getEntityManager()->createQueryBuilder()

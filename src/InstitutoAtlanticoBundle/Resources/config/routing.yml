@@ -57,6 +57,11 @@ movies_delete:
     methods: DELETE
 
 # Ratings
+ratings_save:
+    path:     /ratings/{userId}
+    defaults: { _controller: InstitutoAtlanticoBundle:Rating:save }
+    methods: POST
+    
 ratings_by_user:
     path:     /ratings/user/{userId}
     defaults: { _controller: InstitutoAtlanticoBundle:Rating:listByUser }

@@ -9,8 +9,11 @@ services:
 
   rating_service:
     class: InstitutoAtlanticoBundle\Service\RatingService
-    arguments: ["@doctrine.orm.entity_manager"]
+    arguments: ["@doctrine.orm.entity_manager","@message_helper"]
 
   recommendation_service:
     class: InstitutoAtlanticoBundle\Service\RecommendationService
-    arguments: ["@rating_service"]
+    arguments: ["@doctrine.orm.entity_manager","@rating_service"]
+
+  message_helper:
+    class: InstitutoAtlanticoBundle\Helper\MessageHelper
